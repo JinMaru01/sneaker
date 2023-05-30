@@ -1,0 +1,95 @@
+{% extends "Dashboard/base.html" %}
+
+{% block start %}
+  <!-- Main content -->
+  <section class="content">
+
+    <!-- Default box -->
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">Product</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+            <i class="fas fa-minus"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-body p-0">
+        <table class="table table-striped projects">
+          <thead>
+            <tr>
+              <th style="width: 7%">
+                Image
+              </th>
+              <th style="width: 8%">
+                Name
+              </th>
+              <th style="width: 25%">
+                Description
+              </th>
+              <th style="width: 8%">
+                Quantity
+              </th>
+              <th style="width: 10%">
+                Price
+              </th>
+              <th style="width: 3.5%;">
+                Edit
+              </th>
+              <th style="width: 7%">
+                Delete
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for product in products %}
+            <tr>
+              <td>
+                <img src="/{{ product.image }}" width="40px" alt="Image">
+              </td>
+              <td>
+                <a>
+                  {{ product.name }}
+                </a>
+              </td>
+              <td>
+                <ul class="list-inline">
+                  <a>
+                    {{ product.description }}
+                  </a>
+                </ul>
+              </td>
+              <td class="project_progress">
+                <strong>
+                  {{ product.quantity }}
+                </strong>
+              </td>
+              <td>
+                 {{ product.price }}
+              </td>
+              <td class="project-actions text-right">
+                <a class="btn btn-info btn-sm" href="/edit/{{ product.id }}">
+                  <i class="fas fa-pencil-alt"></i>
+                  Edit
+                </a>
+              </td>
+              <td>
+                <a class="btn btn-danger btn-sm" href="/delete/{{ product.id }}">
+                  <i class="fas fa-trash"></i>
+                  Delete
+                </a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+  </section>
+  <!-- /.content -->
+</div>
+
+{% endblock %}

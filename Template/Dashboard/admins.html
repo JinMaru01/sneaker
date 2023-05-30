@@ -1,0 +1,64 @@
+{% extends "Dashboard/base.html" %}
+
+{% block start %}
+    <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">List of Admin</h3>
+
+              <div class="card-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                  <div class="input-group-append">
+                    <button type="submit" class="btn btn-default">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+              <table class="table table-hover text-nowrap">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>168</td>
+                    <td>Kong Darachin</td>
+                    <td>26-05-2023</td>
+                    <td><span class="tag tag-success">Approved</span></td>
+                    <td>rachinkong@gmail.com</td>
+                    <td>
+                      <button type="button" class="btn btn-primary">Edit</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-11">
+          <input type="button" value="Add New Member" class="btn btn-success float-right">
+        </div>
+      </div>
+  </div>
+ 
+{% endblock %}
+

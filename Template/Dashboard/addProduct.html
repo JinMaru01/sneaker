@@ -1,0 +1,52 @@
+{% extends "Dashboard/base.html" %}
+
+{% block start %}
+  <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-warning">
+          <div class="card-header">
+            <h3 class="card-title">Make Product</h3>
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+            </div>
+          </div>
+          <form class="card-body" method="POST" action="/AddProduct/" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="inputName">Item Name</label>
+              <input type="text" name="name" id="inputName" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="inputNumber">Price</label>
+              <input type="number" name="price" id="inputNumber" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="inputNumber">Quantity</label>
+              <input type="number" name="quantity" id="inputNumber" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="inputDescription">Item Description</label>
+              <input type="text" id="inputDescription" name="description" class="form-control" rows="4"></input>
+            </div>
+            <div class="custom-file">
+              <input type="file" name="image" id="inputFile" class="custom-file-input">
+              <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <a href="/admin" class="btn btn-secondary">Cancel</a>
+                <input type="submit" value="Create new Product" class="btn btn-success float-right">
+              </div>
+            </div>
+          </form>          
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% endblock %}

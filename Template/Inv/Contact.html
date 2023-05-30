@@ -1,0 +1,89 @@
+{% extends "Inv/base.html" %}
+
+{% load static %}
+
+{% block start %}
+
+<section class="order" id="order">
+
+<!-- <h3 class="sub-heading"> Contact us </h3> -->
+<h1 class="heading"> Please fill your information</h1>
+
+<form action="">
+
+    <div class="inputBox">
+        <div class="input">
+            <span>your name</span>
+            <input type="text" placeholder="enter your name">
+        </div>
+        <div class="input">
+            <span>your number</span>
+            <input type="number" placeholder="enter your number">
+        </div>
+    </div>
+    <!-- <div class="inputBox">
+        <div class="input">
+            <span>your order</span>
+            <input type="text" placeholder="enter food name">
+        </div>
+        <div class="input">
+            <span>date and time</span>
+            <input type="datetime-local">
+        </div>
+    </div> -->
+    <div class="inputBox">
+        <!-- <div class="input">
+            <span>Your address and Email</span>
+            <textarea name="" placeholder="enter your address and email" id="" cols="30" rows="10"></textarea>
+        </div> -->
+        <div class="input">
+            <span>Any message</span>
+            <textarea name="" placeholder="enter your message" id="" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+
+    <input type="submit" value="Submit" class="btn">
+
+</form>
+
+</section>
+<div class="footer">
+
+<div class="box-container">
+
+    <div class="box">
+        <h3>quick links</h3>
+        <a href="#">home</a>
+        <a href="#">menu</a>
+        <a href="#">promotion</a>
+        <a href="#">about</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="box">
+        <h3>Location</h3>
+        <i class="fa-solid fa-location-dot"></i>
+        <a href="#">3rd Floor, City C4, Olympia
+           <br> City Phnom Penh, Cambodia, 12312
+        </a>
+    </div>
+
+    <div class="box">
+        <h3>contact info</h3>
+        <a href="#">+855 979 801 569 </a>
+        <a href="#">sneaker123@mail.com</a>
+    </div>
+
+    <div class="box">
+        <h3>follow us</h3>
+        <a href="https://github.com/Kimleang7">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="#">Please support us by other platform</a>
+    </div>
+</div>
+</div>
+{% endblock %}

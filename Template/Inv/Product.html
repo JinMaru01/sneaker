@@ -1,0 +1,40 @@
+{% extends "Inv/base.html" %}
+
+{% load static %}
+
+{% block start %}
+
+<section class="product" id="product">
+
+    <h3 class="sub-heading"></h3>
+    <h1 class="heading">Product</h1>
+
+    <div class="box-container">
+        {% for product in products %}
+        <div class="box">
+            <div class="image">
+                <img src="/{{ product.image }}" alt="Image">
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
+                <span class="price">${{ product.price }}</span>
+                <div class="d-flex">
+                    <button class="btn btn-waring">Buy</button>
+                    <button class="btn btn-secondary">Add Cart</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>
+
+{% endblock %}
