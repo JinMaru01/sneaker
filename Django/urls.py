@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Config import views
+from django.contrib.auth import authenticate
 
 urlpatterns = [
 
@@ -24,17 +25,20 @@ urlpatterns = [
     path('contact/',views.contact),
     path('products/',views.products),
     path('about/',views.about),
-    path('login/',views.login),
+    path('login/',views.loginAction),
+    path('register/',views.signAction),
     path('AddProduct/',views.addProduct),
     path('Product/',views.dashboardProduct),
     path('dashboard/',views.dashboard),
-    path('admins/',views.admins),
+    path('admins/',views.admins, name='admin'),
     path('inbox/',views.inbox),
     path('delete/<int:id>', views.destroy, name='destroy'),
     path('edit/<int:id>', views.edit, name='edit'),
     path('update/<int:id>', views.update, name='update'), 
-    path('register/',views.signAction),
-
+    path('logout/',views.LogoutPage,name='logout'),
+    path('editAdmin/<int:id>', views.editAdmin, name='editAdmin'),
+    path('updateAdmin/<int:id>', views.updateAdmin, name='updateAdmin'), 
+    path('deleteAdmin/<int:id>', views.destroyAdmin, name='destroy'),
 
 
 ]

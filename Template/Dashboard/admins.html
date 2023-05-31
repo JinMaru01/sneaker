@@ -24,28 +24,38 @@
               <table class="table table-hover text-nowrap">
                 <thead>
                   <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Date</th>
-                    <th>Status</th>
-                    <th>Email</th>
+                    <th style="width: 10%">ID</th>
+                    <th style="width: 18%">Username</th>
+                    <th style="width: 10%">Status</th>
+                    <th style="width: 30%">Email</th>
+                    <th style="width: 1%">Edit</th>
+                    <th style="width: 5%">Delete</th>
                   </tr>
                 </thead>
                 <tbody>
+                  {% for user in users %}
                   <tr>
-                    <td>168</td>
-                    <td>Kong Darachin</td>
-                    <td>26-05-2023</td>
-                    <td><span class="tag tag-success">Approved</span></td>
-                    <td>rachinkong@gmail.com</td>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username}}</td>
                     <td>
-                      <button type="button" class="btn btn-primary">Edit</button>
+                      <span class="tag tag-success">{{ user.isAdmin }}</span>
+                    </td>
+                    <td>{{ user.email }}</td>
+                    <td class="project-actions text-right">
+                      <a class="btn btn-info btn-sm" href="/editAdmin/{{ user.id }}">
+                        <i class="fas fa-pencil-alt"></i>
+                        Edit
+                      </a>
                     </td>
                     <td>
-                      <button type="button" class="btn btn-danger">Delete</button>
+                      <a class="btn btn-danger btn-sm" href="/deleteAdmin/{{ user.id }}">
+                        <i class="fas fa-trash"></i>
+                        Delete
+                      </a>
                     </td>
                   </tr>
                 </tbody>
+                {% endfor %}
               </table>
             </div>
             <!-- /.card-body -->
@@ -53,11 +63,11 @@
           <!-- /.card -->
         </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-11">
           <input type="button" value="Add New Member" class="btn btn-success float-right">
         </div>
-      </div>
+      </div> -->
   </div>
  
 {% endblock %}

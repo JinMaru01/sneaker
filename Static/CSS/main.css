@@ -141,6 +141,10 @@ header .icons i:hover{
     color: #fff;
     background: var(--bs-blue);
 }
+header .icons a:hover{
+    color: #fff;
+    background: var(--bs-blue);
+}
 
 header .icons #menu-bars {
     display: none;
@@ -629,18 +633,18 @@ header .icons #menu-bars {
 }
 
 .product{
-    margin-top: 8rem;
+    margin-top: 15rem;
 }
 .product .box-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap: 1.5rem;
 }
 
 .product .box-container .box {
     background: #fff;
     border: .1rem solid rgba(0, 0, 0, .2);
-    border-radius: .5rem;
+    border-radius: 1rem;
     box-shadow: var(--box-shadow);
     cursor: pointer;
 }
@@ -654,7 +658,7 @@ header .icons #menu-bars {
 }
 
 .product .box-container .box .image img {
-    height: 100%;
+    height: 20rem;
     width: 100%;
     border-radius: .5rem;
     object-fit: cover;
@@ -702,8 +706,6 @@ header .icons #menu-bars {
     transform: scale(1.1);
 
 }
-
-
 
 .order{
     margin-top: 8rem;
@@ -761,8 +763,6 @@ header .icons #menu-bars {
     margin-top: 0;
 }
  
-
-
 .News{
     margin-top: 9rem;
 }

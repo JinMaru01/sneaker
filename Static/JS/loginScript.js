@@ -1,20 +1,15 @@
-const sign_in_btn = document.querySelector("#sign-in-btn");
-const sign_up_btn = document.querySelector("#sign-up-btn");
-const container = document.querySelector(".container");
-const sign_in_btn2 = document.querySelector("#sign-in-btn2");
-const sign_up_btn2 = document.querySelector("#sign-up-btn2");
+const pwShowHide = document.querySelectorAll(".pw_hide");
 
-sign_up_btn.addEventListener("click", () => {
-    container.classList.add("sign-up-mode");
-});
 
-sign_in_btn.addEventListener("click", () => {
-    container.classList.remove("sign-up-mode");
-});
-
-sign_up_btn2.addEventListener("click", () => {
-    container.classList.add("sign-up-mode2");
-});
-sign_in_btn2.addEventListener("click", () => {
-    container.classList.remove("sign-up-mode2");
+pwShowHide.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    let getPwInput = icon.parentElement.querySelector("input");
+    if (getPwInput.type === "password") {
+      getPwInput.type = "text";
+      icon.classList.replace("uil-eye-slash", "uil-eye");
+    } else {
+      getPwInput.type = "password";
+      icon.classList.replace("uil-eye", "uil-eye-slash");
+    }
+  });
 });

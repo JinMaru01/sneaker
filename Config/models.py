@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import ImageField
 
 # Create your models here.
 class Product(models.Model):  
@@ -12,11 +13,15 @@ class Product(models.Model):
     class Meta:  
         db_table = "product"
 
-class CustomUser():
+
+class Users(models.Model):
     username = models.CharField(max_length=255)
     email = models.EmailField(max_length=255)
     password = models.CharField(max_length=255)
     confirm_password = models.CharField(max_length=255)
+    isAdmin = models.BooleanField(default=False)
 
     class Meta: 
         db_table = "users"
+
+

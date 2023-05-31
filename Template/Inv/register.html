@@ -1,0 +1,30 @@
+{% extends "Inv/base_login.html" %}
+
+{% block login %}
+
+<form method="POST" action="/register/">
+    {% csrf_token %}
+    <h2>Signup</h2>
+
+    <div class="input_box">
+      <input type="text" placeholder="Create Username" name="username" required>
+      <i class="uil uil-user-circle username"></i>
+    </div>
+    <div class="input_box">
+      <input type="email" placeholder="Enter your email" name="email" required>
+      <i class="uil uil-envelope-alt email"></i>
+    </div>
+    <div class="input_box">
+      <input type="password" placeholder="Create password" name="password" required>
+      <i class="uil uil-lock password"></i>
+    </div>
+    <div class="input_box">
+      <input type="password" placeholder="Confirm password" name="Confirm_password" required>
+      <i class="uil uil-lock password"></i>
+    </div>
+    
+    <button class="button">Signup Now</button>
+    <div class="login_signup">Already have an account? <a href="/login">Login</a></div>
+</form>
+
+{% endblock %}
