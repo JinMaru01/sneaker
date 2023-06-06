@@ -27,7 +27,7 @@
                 <p>{{ product.description }}</p>
                 <span class="price">${{ product.price }}</span>
                 <div class="d-flex">
-                    <button class="btn">Add Cart</button>
+                    <button class="btn" onclick="addToCart('{{ product.id }}')">Add To Cart</button>
                 </div>
             </div>
         </div>

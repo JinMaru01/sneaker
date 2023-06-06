@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <title>Sneaker</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="{% static 'Image/logo-sneaker-removebg.png' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -28,11 +30,21 @@
             <i class="fas fa-bars" id="menu-bars"></i>
             <i class="fas fa-search" id="search-icon"></i>
             <a href="/login" class="fas fa-user"></a>
-            <i class="fas fa-shopping-cart" id="cart-icon"></i>
+            <a class="fas fa-shopping-cart" id="cart-icon"></a>
+           
         </div>
-        
-        <script type="text/javascript" src="{% static 'JS/script.js' %}"></script>
-        
+         <div class="card icons">
+            <div style="display: flex; align-items: center;">
+                <i class="fas fa-shopping-cart"></i>
+                <h1>Your Cart</h1>
+            </div>
+                <ul class="listCard"></ul>
+            <div class="checkOut">
+                <div style="font-size: 18px;" class="total btn">0</div>
+                <div style="font-size: 18px;" class="closeShopping btn">Close</div>
+            </div>
+        </div>
+            
         
     </header>
     
@@ -62,7 +74,7 @@
 
         <div class="box">
             <h3>contact info</h3>
-            <a href="#">+855 979 801 569 </a>
+            <a href="#">+855 15 633 304 </a>
             <a href="#">sneaker123@mail.com</a>
         </div>
 
@@ -80,6 +92,7 @@
   </div>
 
   <script type="text/javascript" src="{% static 'JS/script.js' %}"></script>
+  <script type="text/javascript" src="{% static 'JS/cart.js' %}"></script>
 
 </body>
 </html>

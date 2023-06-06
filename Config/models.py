@@ -25,3 +25,16 @@ class Users(models.Model):
         db_table = "users"
 
 
+class Cart(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=0)
+    image = models.ImageField(upload_to='./static/Image/uploads/cart_images/')
+
+    class Meta:
+        db_table = "list_cart_products"
+        
+    def subtotal(self):
+        return self.product.price * self.quantity
+
+
+

@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Product, Users
-from django.http import HttpResponse
+from django.http import HttpResponse,JsonResponse
 from django.db import connection
 from django.core.files.storage import default_storage
 from django.contrib.auth import authenticate, login, logout
@@ -155,3 +155,20 @@ def signAction(request):
 def LogoutPage(request):
     logout(request)
     return redirect('/login')
+
+def get_product(request, product_id):
+    try:
+        product = Product.objects.get(id=product_id)
+        product_data = {
+            'id': product.id,
+            'name': product.name,
+            'image': product.image.url,  # Assuming you have an ImageField in the Product model
+            'description': product.description,
+            'price': product.price,
+        }
+        return JsonResponse(product_data)
+    except Product.DoesNotExist:
+        return JsonResponse({'error': 'Product not found'}, status=404)
+    
+
+
