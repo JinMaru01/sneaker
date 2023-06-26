@@ -21,24 +21,37 @@ from django.contrib.auth import authenticate
 
 urlpatterns = [
 
-    path('',views.home),
+    path('',views.home,name='home'),
     path('contact/',views.contact),
     path('products/',views.products),
     path('about/',views.about),
-    path('login/',views.loginAction),
-    path('register/',views.signAction),
-    path('AddProduct/',views.addProduct),
+    path('login/',views.user_login),
+    path('team/',views.team),
+    
+    path('register/',views.register),
+    path('AddProduct/',views.addProduct, name = 'Add Product'),
+    path('AddTeam/',views.addTeam, name = 'Add Team'),
     path('Product/',views.dashboardProduct),
-    path('dashboard/',views.dashboard),
+    path('dashboard/',views.dashboard, name='dashboard'),
     path('admins/',views.admins, name='admin'),
     path('inbox/',views.inbox),
     path('delete/<int:id>', views.destroy, name='destroy'),
     path('edit/<int:id>', views.edit, name='edit'),
     path('update/<int:id>', views.update, name='update'), 
-    path('logout/',views.LogoutPage,name='logout'),
+
+    path('deleteTeam/<int:id>', views.destroyTeam, name='destroy'),
+    path('editTeam/<int:id>', views.editTeam, name='edit'),
+    path('updateTeam/<int:id>', views.updateTeam, name='update'), 
+
+    path('search/', views.searchBar, name='search'),
+    path('searchTeam/', views.search_members, name='searchMember'),
+    path('logout/',views.user_logout,name='logout'),
     path('editAdmin/<int:id>', views.editAdmin, name='editAdmin'),
     path('updateAdmin/<int:id>', views.updateAdmin, name='updateAdmin'), 
     path('deleteAdmin/<int:id>', views.destroyAdmin, name='destroy'),
     path('get/product/<int:product_id>/', views.get_product, name='get_product'),
+
+    path('addComment/', views.add_contact, name = 'add_contact'),
+    path('ViewComment/', views.view_comments, name = 'view_comments'),
 
 ]

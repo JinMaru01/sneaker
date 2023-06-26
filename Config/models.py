@@ -35,6 +35,24 @@ class Cart(models.Model):
         
     def subtotal(self):
         return self.product.price * self.quantity
+    
+class Team(models.Model):  
+    name = models.CharField(max_length=255)
+    StudentId = models.CharField(max_length=255)
+    social = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField(upload_to='./static/Image/uploads/team')
 
+    class Meta:  
+        db_table = "team"
+
+
+class Contact(models.Model):
+    username = models.CharField(max_length=255)
+    phoneNumber = models.CharField(max_length=255)
+    message = models.TextField()
+
+    class Meta: 
+        db_table = "contact"
 
 

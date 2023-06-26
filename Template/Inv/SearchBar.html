@@ -1,0 +1,56 @@
+{% extends 'Inv/Base.html' %}
+
+{% load static %}
+
+{% block start %}
+
+<form method="GET" action="/search/" id="search-form">
+    <input type="text" placeholder="search here..." name="query" id="search-box">
+    <label for="search-box" class="fas fa-search"></label>
+    <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+    <i class="fas fa-times" id="close"></i>
+</form>
+
+<section class="product" id="product">
+
+    <h3 class="sub-heading"></h3>
+    <h1 class="heading">Product Searching</h1>
+
+    <div class="box-container">
+
+        {% if products %}
+
+            {% for product in products %}
+
+            <div class="box">
+                <div class="image">
+                    <img src="/{{ product.image }}" alt="Image">
+                </div>
+                <div class="content">
+                    <!-- <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div> -->
+                    <h3>{{ product.name }}</h3>
+                    <p>{{ product.description }}</p>
+                    <span class="price">${{ product.price }}</span>
+                    <div class="d-flex">
+                        <button class="btn" onclick="addToCart('{{ product.id }}')">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+                <h1>No Products available </h1>
+        {% endif %}
+    
+    </div>
+
+</section>
+
+{% endblock %}

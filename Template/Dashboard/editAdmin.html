@@ -25,12 +25,13 @@
               <input type="email" name="email" value="{{user.email}}" id="inputNumber" class="form-control">
             </div>
             <div class="form-group">
-              <label for="inputNumber">Status</label>
-              <input type="number" value="{{user.isAdmin}}" name="isAdmin" id="inputNumber" class="form-control">
+              <label for="inputNumber">Admin?</label>
+              <!-- <input type="checkbox" value="{{user.is_superuser}}" name="isAdmin" id="isAdmin" class="form-control"> -->
+              <input type="checkbox" name="isAdmin" id="inputNumber" class="form-control" {% if user.is_superuser %}checked{% endif %}>
             </div>
             <div class="row">
               <div class="col-12">
-                <a href="/admin" class="btn btn-secondary">Cancel</a>
+                <a href="/admins" class="btn btn-secondary">Cancel</a>
                 <input type="submit" value="Update Admin" class="btn btn-success float-right">
               </div>
             </div>

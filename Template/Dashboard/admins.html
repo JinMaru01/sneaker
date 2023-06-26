@@ -26,7 +26,7 @@
                   <tr>
                     <th style="width: 10%">ID</th>
                     <th style="width: 18%">Username</th>
-                    <th style="width: 10%">Status</th>
+                    <th style="width: 10%">Admin?</th>
                     <th style="width: 30%">Email</th>
                     <th style="width: 1%">Edit</th>
                     <th style="width: 5%">Delete</th>
@@ -38,7 +38,12 @@
                     <td>{{ user.id }}</td>
                     <td>{{ user.username}}</td>
                     <td>
-                      <span class="tag tag-success">{{ user.isAdmin }}</span>
+                      <!-- <span class="tag tag-success">{{ user.is_superuser }}</span> -->
+                      {% if user.is_superuser %}
+                      <span class="tag tag-success">Yes</span>
+                      {% else %}
+                          <span class="tag tag-danger">No</span>
+                      {% endif %}                  
                     </td>
                     <td>{{ user.email }}</td>
                     <td class="project-actions text-right">

@@ -4,7 +4,7 @@
 
 {% block start %}
 
-<form method="GET" action="/search/" id="search-form">
+<form method="GET" action="/searchTeam/" id="search-form">
     <input type="text" placeholder="search here..." name="query" id="search-box">
     <label for="search-box" class="fas fa-search"></label>
     <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
@@ -14,13 +14,13 @@
 <section class="product" id="product">
 
     <h3 class="sub-heading"></h3>
-    <h1 class="heading">Product</h1>
+    <h1 class="heading">Team Members</h1>
 
     <div class="box-container">
-        {% for product in products %}
+        {% for team in teams %}
         <div class="box">
             <div class="image">
-                <img src="/{{ product.image }}" alt="Image">
+                <img src="/{{ team.image }}" alt="Image">
             </div>
             <div class="content">
                 <!-- <div class="stars">
@@ -30,11 +30,12 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div> -->
-                <h3>{{ product.name }}</h3>
-                <p>{{ product.description }}</p>
-                <span class="price">${{ product.price }}</span>
-                <div class="d-flex">
-                    <button class="btn" onclick="addToCart('{{ product.id }}')">Add To Cart</button>
+                <h3 style="font-size: 20px;">Name: {{ team.name }}</h3>
+                <h3 style="font-size: 20px;">ID: {{ team.StudentId }}</h3>
+                <p>Description: {{ team.description }}</p>
+                <div style="font-size: 20px;" class="d-flex justify-content-center  ">
+                    <i style="color: blue;" class="fa-brands fa-facebook"></i>
+                    <a href="">{{ team.social }}</a>
                 </div>
             </div>
         </div>

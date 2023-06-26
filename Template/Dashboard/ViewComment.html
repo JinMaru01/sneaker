@@ -1,0 +1,25 @@
+{% extends "Dashboard/base.html" %}
+
+{% load static %}
+
+{% block start %}
+    <div class="col-11">
+      <h4>Recent Messages</h4>
+        {% for message in contacts %}
+        <div class="post">
+          <div class="user-block">
+            <img class="img-circle img-bordered-sm"   src="{% static 'Image/defaultUser.png'%}" alt="user image">
+            <span class="username">
+              <a href="#">{{message.username}}</a>
+            </span>
+            <span class="description">Phone Number: {{message.phoneNumber}}</span>
+          </div>
+          <!-- /.user-block -->
+          <p class="col-12">
+            {{message.message}}
+          </p>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

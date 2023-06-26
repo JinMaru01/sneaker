@@ -10,6 +10,19 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css'%}">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.css'%}">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/brands.css'%}">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/brands.min.css'%}">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/fontawesome.css'%}">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/fontawesome.min.css'%}">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/regular.min.css'%}">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/regular.css'%}">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/solid.css'%}">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/solid.min.css'%}">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/svg-with-js.css'%}">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/svg-with-js.min.css'%}">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/v4-shimes.min.css'%}">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/v4-shimes.css'%}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bootstrap 4 -->
@@ -134,10 +147,18 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/inbox" class="nav-link">
+            <a href="/ViewComment" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>
               <p>
-                Inbox
+                Messages
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/logout" class="nav-link">
+              <i class="nav-icon fa fa-right-from-bracket"></i>
+              <p>
+                Logout
               </p>
             </a>
           </li>
@@ -167,6 +188,7 @@
 {% endblock %}  
 
 <!-- jQuery -->
+
 <script src="{% static 'plugins/jquery/jquery.min.js'%}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{% static 'plugins/jquery-ui/jquery-ui.min.js'%}"></script>
@@ -200,6 +222,8 @@
 <script src="{% static 'JS/Admin/demo.js'%}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{% static 'JS/Admin/dashboard.js'%}"></script>
+<!-- FontAwesome -->
+<script src="https://kit.fontawesome.com/edf703edf4.js" crossorigin="anonymous"></script>
 
 </body>
 </html>

@@ -9,16 +9,22 @@
 <!-- <h3 class="sub-heading"> Contact us </h3> -->
 <h1 class="heading"> Please fill your information</h1>
 
-<form action="">
-
+<form action="/addComment/" enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
     <div class="inputBox">
         <div class="input">
             <span>your name</span>
-            <input type="text" placeholder="enter your name">
+            <input type="text" name="username" id="username" placeholder="enter your name">
         </div>
         <div class="input">
             <span>your number</span>
-            <input type="number" placeholder="enter your number">
+            <input type="text" name="phoneNumber" id="phonNumber" placeholder="enter your number">
+        </div>
+    </div>
+    <div class="inputBox">
+        <div class="input">
+            <span>Any message</span>
+            <textarea name="message" placeholder="enter your message" id="message" cols="30" rows="10"></textarea>
         </div>
     </div>
     <!-- <div class="inputBox">
@@ -31,16 +37,16 @@
             <input type="datetime-local">
         </div>
     </div> -->
-    <div class="inputBox">
-        <!-- <div class="input">
+    <!-- <div class="inputBox">
+        <div class="input">
             <span>Your address and Email</span>
             <textarea name="" placeholder="enter your address and email" id="" cols="30" rows="10"></textarea>
-        </div> -->
+        </div> 
         <div class="input">
             <span>Any message</span>
             <textarea name="" placeholder="enter your message" id="" cols="30" rows="10"></textarea>
         </div>
-    </div>
+    </div> -->
 
     <input type="submit" value="Submit" class="btn">
 
